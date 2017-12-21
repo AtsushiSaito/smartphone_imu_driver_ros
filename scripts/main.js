@@ -7,7 +7,7 @@ ros.on('close', function(){ console.log("WebSocket: closed");});
 
 var ros_pub = new ROSLIB.Topic({
     ros : ros,
-    name : '/web_time',
+    name : '/imu/data_raw"',
     messageType : "sensor_msgs/Imu"
 });
 
