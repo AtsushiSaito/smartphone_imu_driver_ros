@@ -23,13 +23,13 @@ function devicemotionHandler(event) {
     document.getElementById("a_x").innerHTML = accel_x;
     document.getElementById("a_y").innerHTML = accel_y;
     document.getElementById("a_z").innerHTML = accel_z;
-    document.getElementById("l_a").innerHTML = alpha;
     document.getElementById("l_b").innerHTML = beta;
-    document.getElementById("l_y").innerHTML = gamma;
+    document.getElementById("l_g").innerHTML = gamma;
+    document.getElementById("l_a").innerHTML = alpha;
 
     var msg = new ROSLIB.Message({
         "angular_velocity":{"x": accel_x, "y": accel_y, "z": accel_z},
-        "linear_acceleration":{"x": alpha, "y": beta, "z": gamma}
+        "linear_acceleration":{"x": beta, "y": gamma, "z": alpha}
     });
     ros_pub.publish(msg);
 };
