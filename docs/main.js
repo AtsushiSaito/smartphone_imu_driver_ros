@@ -1,15 +1,21 @@
-/*--------ROSとの通信----------*/
-var ros = new ROSLIB.Ros({ url: 'ws://' + location.hostname + ':9000' });
+function connect() {
+    if (address_form.address.value == "") {
+        alert("IPアドレスを入力してください。");
+    } else {
+        // alert("IP:" + address_form.address.value);
+        var ros = new ROSLIB.Ros({ url: 'wss://' + address_form.address.value + ':9000' });
 
-ros.on('connection', function () { console.log("WebSocket: connected"); });
-ros.on('error', function (error) { console.log("WebSocket error: ", error); });
-ros.on('close', function () { console.log("WebSocket: closed"); });
+        var ros_pub = new ROSLIB.Topic({
+            ros: ros,
+            name: 'imu/data_raw',
+            messageType: "sensor_msgs/Imu"
+        });
 
-var ros_pub = new ROSLIB.Topic({
-    ros: ros,
-    name: 'imu/data_raw',
-    messageType: "sensor_msgs/Imu"
-});
+        ros.on('connection', function () { console.log("WebSocket: connected"); });
+        ros.on('error', function (error) { console.log("WebSocket error: ", error); });
+        ros.on('close', function () { console.log("WebSocket: closed"); });
+    }
+}
 
 window.addEventListener("devicemotion", devicemotionHandler);
 function devicemotionHandler(event) {
