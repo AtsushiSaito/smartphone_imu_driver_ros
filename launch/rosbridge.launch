@@ -2,4 +2,5 @@
   <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" >
     <arg name="port" value="9000"/>
   </include>
+  <node pkg="rviz" type="rviz" name="rviz_imu" args="-d $(find ros_smartphone_imu)/rviz/config.rviz"/>
 </launch>
