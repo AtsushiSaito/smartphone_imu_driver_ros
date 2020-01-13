@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ros_smartphone_imu</name>
+  <name>smartphone_imu_driver_ros</name>
   <version>0.0.0</version>
-  <description>The ros_smartphone_imu package</description>
+  <description>The smartphone_imu_driver_ros package</description>
   <maintainer email="atsushi31100854@gmail.com">AtsushiSaito</maintainer>
   <license>MIT</license>
   <buildtool_depend>catkin</buildtool_depend>

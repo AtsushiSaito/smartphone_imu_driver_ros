@@ -1,5 +1,5 @@
-# ros_smartphone_imu
-The smartphone will be the IMU sensor.
+# smartphone_imu_driver_ros
+ROS package for get the smartphone IMU data.
 
 ## パッケージ説明
 お手持ちのスマートフォンをIMU(慣性計測装置)として使用することができるROSパッケージです。
